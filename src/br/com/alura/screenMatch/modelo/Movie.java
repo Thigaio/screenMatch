@@ -1,52 +1,30 @@
-import java.util.Scanner;
+package br.com.alura.screenMatch.modelo;
 
-public class Movie {
-    String name;
-    int releaseDate;
-    boolean included;
-    private double somaAvaliacoes;
-    private int totalScore;
-    int timeInMinutes;
-    int option = 0;
-    double score = 0;
-    Scanner scan = new Scanner(System.in);
+import br.com.alura.screenMatch.calculo.Classificavel;
 
-    void showTecnicTable () {
-        System.out.println("Nome  do filme: " + name);
-        System.out.println("Ano de lançamento: " + releaseDate);
+public class Movie extends Titulo implements Classificavel {
+    private String director;
+
+    public Movie (String nome, int releaseDate) {
+        super(nome, releaseDate);
     }
 
-    void avaliacao () {
-        System.out.println("Deseja avaliar esse filme ?");
-        System.out.println("""
-                0- Não
-                1- Sim""");
-        option = scan.nextInt();
+    public String getDirector() {
 
-        while(option != 0) {
-            avalia();
-            System.out.println("A nota que você dá pra esse filme é " + score);
-
-            System.out.println("Deseja avaliar novamente esse filme ?");
-            System.out.println("""
-                0- Nâo
-                1- Sim""");
-            option = scan.nextInt();
-        }
+        return director;
     }
 
-    void avalia () {
-        System.out.println("Digite tua nota para esse filme: ");
-        score = scan.nextDouble();
-        somaAvaliacoes += score;
-        totalScore++;
+    public void setDirector(String director) {
+
+        this.director = director;
     }
 
-    double getScore () {
-        return somaAvaliacoes / totalScore;
+    @Override
+    public int getClassification() {
+        return (int) getScore() / 2;
     }
 
-    int getTotalScore() {
-        return totalScore;
+    public String toString() {
+        return "Filme: " + this.getName() + "(" + this.getReleaseDate() +  ")";
     }
 }

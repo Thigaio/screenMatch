@@ -1,5 +1,7 @@
-import br.com.alura.screeMatch.calculo.Calculator;
-import br.com.alura.screeMatch.calculo.RecommendationFilter;
+package br.com.alura.screenMatch.principal;
+
+import br.com.alura.screenMatch.calculo.Calculator;
+import br.com.alura.screenMatch.calculo.RecommendationFilter;
 import br.com.alura.screenMatch.modelo.Episodes;
 import br.com.alura.screenMatch.modelo.Movie;
 import br.com.alura.screenMatch.modelo.Series;

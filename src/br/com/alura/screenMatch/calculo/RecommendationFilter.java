@@ -1,4 +1,4 @@
-package br.com.alura.screeMatch.calculo;
+package br.com.alura.screenMatch.calculo;
 
 public class RecommendationFilter {
     public void filtra (Classificavel classificavel) {

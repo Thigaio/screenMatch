@@ -1,2 +1,4 @@
-package br.com.alura.screenMatch.modelo;public class TituloOMDB {
+package br.com.alura.screenMatch.modelo;
+
+public record TituloOMDB(String title, String year, String runtime) {
 }
